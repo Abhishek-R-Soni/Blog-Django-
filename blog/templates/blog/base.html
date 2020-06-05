@@ -1,0 +1,41 @@
+{% load static %}
+<html>
+    <head>
+        <title>Blog</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">Blog</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="{% url 'blog:index' %}">Home</a></li>
+                <li><a href="{% url 'admin:index' %}">Admin</a></li>
+                <li><a href="{% url 'blog:post_create' %}">Post Create</a></li>
+                <li><a href="{% url 'blog:post_list' %}">Post List</a></li>
+              </ul>
+            </div>
+          </nav>
+        
+        <div class="content container">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="blog_posts">
+                {% block body %}
+  
+                {% endblock %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </body>
+</html>
